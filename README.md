@@ -19,4 +19,7 @@ Création de la page d'accueil avec un nouveau controller ```php bin/console mak
 Ensuite je créer la navbar dans Twig avec ```nav.html.twig``` .
 
 ## 🗄️ Base de données
-Création de ma base de données et inclusions des tables en créant des Entités pour chaque table.
+Création de ma base de données et inclusions des tables en créant des Entités pour chaque table. Ajout des relations OneToMany / ManyToMany .
+
+## 🗄️ Fixtures
+Je créer mes fixtures ce qui me permet d'avoir des données de test.
