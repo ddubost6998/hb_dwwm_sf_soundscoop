@@ -17,3 +17,6 @@ Reprendre le projet PHP (SoundScoop) et le refaire en Symfony 6.4
 ## 🏠 Page d'accueil
 Création de la page d'accueil avec un nouveau controller ```php bin/console make:controller``` ce qui me permet de créer IndexController dans 📁 src > Controller > IndexController.php . Dans le même temps cela créer un nouveau template index.html.twig .
 Ensuite je créer la navbar dans Twig avec ```nav.html.twig``` .
+
+## 🗄️ Base de données
+Création de ma base de données et inclusions des tables en créant des Entités pour chaque table.
