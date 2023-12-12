@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ArticleRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -25,6 +27,20 @@ class Article
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $urlPicture = null;
+
+    #[ORM\ManyToOne(inversedBy: 'articles')]
+    private ?Category $category = null;
+
+    #[ORM\ManyToOne(inversedBy: 'articles')]
+    private ?User $user = null;
+
+    #[ORM\ManyToMany(targetEntity: Artist::class, inversedBy: 'articles')]
+    private Collection $artists;
+
+    public function __construct()
+    {
+        $this->artists = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -75,6 +91,54 @@ class Article
     public function setUrlPicture(?string $urlPicture): static
     {
         $this->urlPicture = $urlPicture;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): static
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Artist>
+     */
+    public function getArtists(): Collection
+    {
+        return $this->artists;
+    }
+
+    public function addArtist(Artist $artist): static
+    {
+        if (!$this->artists->contains($artist)) {
+            $this->artists->add($artist);
+        }
+
+        return $this;
+    }
+
+    public function removeArtist(Artist $artist): static
+    {
+        $this->artists->removeElement($artist);
 
         return $this;
     }
