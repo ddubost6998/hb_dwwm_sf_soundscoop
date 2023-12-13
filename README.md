@@ -22,4 +22,4 @@ Ensuite je créer la navbar dans Twig avec ```nav.html.twig``` .
 Création de ma base de données et inclusions des tables en créant des Entités pour chaque table. Ajout des relations OneToMany / ManyToMany .
 
 ## 🗄️ Fixtures
-Je créer mes fixtures ce qui me permet d'avoir des données de test.
+Je créer mes fixtures ce qui me permet d'avoir des données de test. J'utilise Faker pour l'insertion de données fake.
