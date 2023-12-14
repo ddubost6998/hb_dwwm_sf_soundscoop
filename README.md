@@ -23,3 +23,6 @@ Création de ma base de données et inclusions des tables en créant des Entité
 
 ## 🗄️ Fixtures
 Je créer mes fixtures ce qui me permet d'avoir des données de test. J'utilise Faker pour l'insertion de données fake.
+
+## 🌐 EasyAdmin / CRUD
+Utilisation de EasyAdmin pour la réalisation du CRUD pour les administrateurs sur l'entité Article.
