@@ -26,3 +26,8 @@ Je créer mes fixtures ce qui me permet d'avoir des données de test. J'utilise 
 
 ## 🌐 EasyAdmin / CRUD
 Utilisation de EasyAdmin pour la réalisation du CRUD pour les administrateurs sur l'entité Article.
+
+---
+
+## 🤯 Mes difficultés
+Charger mes Fixtures pour inséré mes données d'articles, de catégories, d'utilisateurs et de style.
