@@ -15,9 +15,30 @@
     <section>
         <h2>Les 3 derniers articles</h2>
         <ul>
-            {# {% for article in latestArticles %}
+            {% for article in latestArticles %}
                 <li>{{ article.title }}</li>
-            {% endfor %} #}
+            {% endfor %}
+        </ul>
+
+        <h2>Tous les artistes</h2>
+        <ul>
+            {% for artist in allArtists %}
+                <li>{{ artist.name }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Toutes les catégories</h2>
+        <ul>
+            {% for category in allCategories %}
+                <li>{{ category.name }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Tous les styles</h2>
+        <ul>
+            {% for style in allStyles %}
+                <li>{{ style.name }}</li>
+            {% endfor %}
         </ul>
     </section>
 
