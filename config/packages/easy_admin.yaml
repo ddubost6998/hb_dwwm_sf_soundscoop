@@ -1,0 +1,49 @@
+easy_admin:
+    entities:
+        Article:
+            class: App\Entity\Article
+            label: 'Article'
+            form:
+                fields:
+                    - 'title'
+                    - 'content'
+                    - 'createdAt'
+                    - 'urlPicture'
+                    - { property: 'category', type: 'entity', type_options: { class: 'App\Entity\Category', label: 'Category' } }
+                    - { property: 'user', type: 'entity', type_options: { class: 'App\Entity\User', label: 'User' } }
+                    - { property: 'artists', type: 'entity', type_options: { class: 'App\Entity\Artist', label: 'Artists', multiple: true } }
+
+        Artist:
+            class: App\Entity\Artist
+            label: 'Artist'
+            form:
+                fields:
+                    - 'name'
+                    - 'country'
+                    - 'createdAt'
+                    - { property: 'style', type: 'entity', type_options: { class: 'App\Entity\Style', label: 'Style' } }
+                    - { property: 'articles', type: 'entity', type_options: { class: 'App\Entity\Article', label: 'Articles', multiple: true } }
+
+        Category:
+            class: App\Entity\Category
+            label: 'Category'
+            form:
+                fields:
+                    - 'name'
+
+        Style:
+            class: App\Entity\Style
+            label: 'Style'
+            form:
+                fields:
+                    - 'name'
+                    - { property: 'artist', type: 'entity', type_options: { class: 'App\Entity\Artist', label: 'Artists', multiple: true } }
+
+        User:
+            class: App\Entity\User
+            label: 'User'
+            form:
+                fields:
+                    - 'name'
+                    - 'email'
+                    - 'password'
